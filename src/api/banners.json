@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "image": "../assets/images/campaigns1.jpg"
+    },
+    {
+      "id": 2,
+      "image": "../assets/images/campaigns2.jpg"
+    },
+    {
+      "id": 3,
+      "image": "../assets/images/campaigns3.jpg"
+    },
+    {
+      "id": 4,
+      "image": "../assets/images/campaigns4.jpg"
+    }
+]
