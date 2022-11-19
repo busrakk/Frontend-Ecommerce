@@ -1,7 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'media',
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/flowbite/**/*.js",
+    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
     extend: {
@@ -9,9 +12,7 @@ module.exports = {
         '0.1': '0.063rem'
       },
       colors: {
-        'brand-color': 'rgb(244 244 245)',
-        'primary-brand-color': '#5d3ebc',
-        'secondary-brand-color': '#7849f7',
+        primary: "#4A3AFF",
       }
     },
   },

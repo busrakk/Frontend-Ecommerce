@@ -10,10 +10,8 @@ const Home = () => {
   return (
     <>
       <AllCategories />
-      <HeroSection />
-      <div className='container mx-auto xl:px-40 grid gap-y-6 pt-8'>
-        <Advertisement />
-      </div>
+      <HeroSection /> 
+      <Advertisement />
       <Campaigns />
       <div className='container mx-auto xl:px-40 grid gap-y-6 pt-8'>
         <Favorites />

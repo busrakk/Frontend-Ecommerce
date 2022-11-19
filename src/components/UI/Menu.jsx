@@ -28,9 +28,9 @@ const Menu = ({ title, items }) => {
   return (
     <section>
             <nav className="grid gap-y-2 md:gap-y-4">
-                <h6 onClick={toggleCollapse} className="text-lg text-primary-brand-color flex items-center justify-between">
+                <h6 onClick={toggleCollapse} className="text-lg text-black flex items-center justify-between">
                     {title}
-                    <button className="grid md:hidden w-6 h-6 place-items-center rounded-lg bg-primary-brand-color bg-opacity-10 text-primary-brand-color">
+                    <button className="grid md:hidden w-6 h-6 place-items-center rounded-lg bg-black bg-opacity-10 text-black">
                         <span className={`transition-all transform ${isOpen ? '-rotate-180' : ''}`}>
                             <IoIosArrowDown size={14} />
                         </span>
@@ -41,7 +41,7 @@ const Menu = ({ title, items }) => {
                         <ul className="grid gap-y-1 md:gap-y-2">
                         {items.map((item, key) => (
                             <li key={key}>
-                                <a href="#" className="text-sm hover:text-brand-color">
+                                <a href="#" className="text-sm hover:text-gray-400">
                                     {item.title}
                                 </a>
                             </li>

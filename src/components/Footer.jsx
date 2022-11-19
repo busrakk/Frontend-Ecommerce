@@ -83,21 +83,21 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row gap-y-4 justify-between items-center border-t border-gray-100 mt-6 py-6">
                     <div className="text-xs text-gray-700 flex gap-x-8">
                         &copy; 2022 e-Ticaret
-                        <NavLink to="#" className="text-primary-brand-color hover:underline relative before:w-[3px] before:h-[3px] before:bg-black before:absolute before:-left-4 before:top-1/2 before:-translate-y-1/2 before:rounded-full">
+                        <NavLink to="#" className="text-gray-800 hover:underline relative before:w-[3px] before:h-[3px] before:bg-black before:absolute before:-left-4 before:top-1/2 before:-translate-y-1/2 before:rounded-full">
                             Bilgi Toplumu Hizmetleri
                         </NavLink>
                     </div>
                     <nav className="flex gap-x-3">
-                        <NavLink to="#" className="w-8 h-8 rounded-lg text-gray-500 transition-colors hover:bg-primary-brand-color hover:bg-opacity-10 hover:text-primary-brand-color flex items-center justify-center">
+                        <NavLink to="#" className="w-8 h-8 rounded-lg text-gray-500 transition-colors hover:bg-gray-800 hover:bg-opacity-10 hover:text-gray-800 flex items-center justify-center">
                             <FaFacebook size={21} />
                         </NavLink>
-                        <NavLink to="#" className="w-8 h-8 rounded-lg text-gray-500 transition-colors hover:bg-primary-brand-color hover:bg-opacity-10 hover:text-primary-brand-color flex items-center justify-center">
+                        <NavLink to="#" className="w-8 h-8 rounded-lg text-gray-500 transition-colors hover:bg-gray-800 hover:bg-opacity-10 hover:text-gray-800 flex items-center justify-center">
                             <FaTwitter size={21} />
                         </NavLink>
-                        <NavLink to="#" className="w-8 h-8 rounded-lg text-gray-500 transition-colors hover:bg-primary-brand-color hover:bg-opacity-10 hover:text-primary-brand-color flex items-center justify-center">
+                        <NavLink to="#" className="w-8 h-8 rounded-lg text-gray-500 transition-colors hover:bg-gray-800 hover:bg-opacity-10 hover:text-gray-800 flex items-center justify-center">
                             <FaInstagram size={21} />
                         </NavLink>
-                        <NavLink to="#" className="h-8 transition-colors hover:bg-primary-brand-color hover:bg-opacity-10 hover:text-primary-brand-color hover:border-transparent flex items-center px-2 text-sm gap-x-2 rounded text-gray-500 border border-gray-100">
+                        <NavLink to="#" className="h-8 transition-colors hover:bg-gray-800 hover:bg-opacity-10 hover:text-gray-800 hover:border-transparent flex items-center px-2 text-sm gap-x-2 rounded text-gray-500 border border-gray-100">
                             <BiGlobe size={18} />
                             Türkçe (TR)
                         </NavLink>
