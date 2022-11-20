@@ -11,8 +11,10 @@ const Advertisement = () => {
   }, []);
 
   return (
-    <div class="mx-auto max-w-2xl py-16 px-2 sm:py-12 sm:px-6 lg:max-w-7xl lg:px-4">
-      <Title class="sr-only">Güncel İlanlar</Title>
+    <div class="mx-auto max-w-2xl py-20 z-20 px-2 sm:py-12 sm:px-6 lg:max-w-7xl lg:px-4">
+      <div className="flex items-center space-x-8">
+        <Title class="sr-only">Güncel İlanlar</Title>
+      </div>
 
       <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
         {products.length &&

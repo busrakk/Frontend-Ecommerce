@@ -1,11 +1,9 @@
-import React from 'react'
+import React from "react";
 
-const index = () => {
-  return (
-    <div>
-      helmet
-    </div>
-  )
-}
+const Helmet = (props) => {
+  document.title = "Ecommerce - " + props.title;
+  return <div className="w-100">{props.children}</div>;
+};
 
-export default index
+export default Helmet;
+
