@@ -30,10 +30,10 @@ const ProductItem = ({ product }) => {
       </NavLink>
       <div className="w-56 -mt-12 flex items-center px-4 overflow-hidden rounded-lg shadow-lg md:w-64">
         <NavLink to="#">
-        <button type="button" class="inline-flex items-center text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-1 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center mr-2 mb-2">
+        <button type="button" className="inline-flex items-center text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-1 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center mr-2 mb-2">
             <svg
               aria-hidden="true"
-              class="mr-2 -ml-1 w-5 h-5"
+              className="mr-2 -ml-1 w-5 h-5"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"

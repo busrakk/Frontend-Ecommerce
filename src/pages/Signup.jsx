@@ -1,165 +1,94 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Signup = () => {
+
+  const [registerInput, setRegister] = useState({
+    name: "",
+    email: "",
+    password: "",
+    error_list: []
+  });
+
+  const handleInput = (e) => {
+    e.presist();
+    setRegister({...registerInput, [e.target.name]: e.target.value});
+  }
+
+  const registerSubmit = (e) => {
+    e.preventDefault();
+
+    const data = {
+      name: registerInput.name,
+      email: registerInput.email,
+      password: registerInput.password,
+    }
+
+    axios.get('/sanctum/csrf-cookie').then(response => {
+      axios.post(`/api/register`, data).then(res => {
+        if(res.data.status === 200)
+        {
+
+        }
+        else
+        {
+          setRegister({...registerInput, error_list: res.data.validation_errors});
+        }
+      });
+    });
+    
+
+  }
+
   return (
     <div>
-      <section class="bg-white mt-20">
-        <div class="container flex items-center justify-center min-h-screen px-6 mx-auto">
-          <form class="w-full max-w-md">
-            <img
-              class="object-cover w-24 h-24 mx-auto rounded-full"
-              src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-              alt="user avatar"
-            />
+      <section className="bg-white mt-20">
+        <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
+          
+          <form onSubmit={registerSubmit} className="w-full max-w-md">
 
-            <div class="flex items-center justify-center mt-6 space-x-8">
-              <NavLink
-                to="../login"
-                class="w-1/3 pb-4 font-medium text-center text-gray-800 capitalize border-b-2 border-blue-500"
-              >
-                Giriş Yap
-              </NavLink>
-
-              <NavLink
-                to="#"
-                class="w-1/3 pb-4 font-medium text-center text-gray-500 capitalize border-b"
-              >
-                Kayıt Ol
-              </NavLink>
-            </div>
-
-            <div class="relative flex items-center mt-8">
-              <span class="absolute">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6 mx-3 text-gray-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
-              </span>
-
+            <div className="relative flex items-center mt-8">
               <input
+                onChange={handleInput}
+                value={registerInput.name}
                 type="text"
-                class="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Username"
               />
+              <span>{registerInput.error_list.name}</span>
             </div>
 
-            <label
-              for="dropzone-file"
-              class="flex items-center px-3 py-3 mx-auto mt-6 text-center bg-white border-2 border-dashed rounded-md cursor-pointer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-6 h-6 text-gray-300"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
-                />
-              </svg>
 
-              <h2 class="mx-3 text-gray-400">Profile Photo</h2>
-
-              <input id="dropzone-file" type="file" class="hidden" />
-            </label>
-
-            <div class="relative flex items-center mt-6">
-              <span class="absolute">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6 mx-3 text-gray-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-              </span>
-
+            <div className="relative flex items-center mt-6">
               <input
+                onChange={handleInput}
+                value={registerInput.email}
                 type="email"
-                class="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full py-3 text-gray-700 bg-white border rounded-md px-11 focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Email address"
               />
+              <span>{registerInput.error_list.email}</span>
             </div>
 
-            <div class="relative flex items-center mt-4">
-              <span class="absolute">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6 mx-3 text-gray-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                  />
-                </svg>
-              </span>
-
+            <div className="relative flex items-center mt-4">
               <input
+                onChange={handleInput}
+                value={registerInput.password}
                 type="password"
-                class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Password"
               />
+              <span>{registerInput.error_list.password}</span>
             </div>
 
-            <div class="relative flex items-center mt-4">
-              <span class="absolute">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6 mx-3 text-gray-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                  />
-                </svg>
-              </span>
-
-              <input
-                type="password"
-                class="block w-full px-10 py-3 text-gray-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                placeholder="Confirm Password"
-              />
-            </div>
-
-            <div class="mt-6">
-              <button class="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+            <div className="mt-6">
+              <button type="submit" className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                 Sign Up
               </button>
 
-              <div class="mt-6 text-center ">
-                <NavLink to="../login" class="text-sm text-blue-500 hover:underline">
+              <div className="mt-6 text-center ">
+                <NavLink to="../login" className="text-sm text-blue-500 hover:underline">
                   Already have an account?
                 </NavLink>
               </div>

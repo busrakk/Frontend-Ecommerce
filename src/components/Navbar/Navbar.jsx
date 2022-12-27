@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 // import Button from "../Button";
-import NavLinks from "./Navlinks";
 import { Tr } from 'react-flags-select';
 
 import {
@@ -18,7 +17,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white fixed top-0 z-50 w-full">
-      <header class="relative bg-white z-50">
+      <header className="relative bg-white z-50">
         <div className="flex h-7 items-center justify-end space-x-8 tracking-tighter bg-black px-8 text-[13px] font-light text-white sm:px-10 lg:px-12">
           <div className="font-light">|</div>
           <NavLink
@@ -53,25 +52,25 @@ const Navbar = () => {
               Home
             </Link>
           </li> */}
-          <NavLinks />
+          {/* <NavLinks /> */}
         </ul>
         <div className="flex flex-row space-x-4">
-        <div class="md:block hidden">
+        <div className="md:block hidden">
             <NavLink
-              class="relative text-black transition-colors duration-300 transform hover:text-gray-500"
+              className="relative text-black transition-colors duration-300 transform hover:text-gray-500"
               to="#"
             >
               <HiOutlineShoppingBag size={25} />
-              <span class="absolute top-[60px] left-38 p-1 text-xs text-white bg-indigo-600 rounded-full"></span>
+              <span className="absolute top-[2px] left-38 p-1 text-xs text-white bg-indigo-600 rounded-full"></span>
             </NavLink>
           </div>
-          <div class="md:block hidden">
+          <div className="md:block hidden">
             <NavLink
-              class="relative text-black transition-colors duration-300 transform hover:text-gray-500"
+              className="relative text-black transition-colors duration-300 transform hover:text-gray-500"
               to="#"
             >
               <HiOutlineHeart size={25} />
-              <span class="absolute top-[60px] left-38 p-1 text-xs text-white bg-indigo-600 rounded-full"></span>
+              <span className="absolute top-[2px] left-38 p-1 text-xs text-white bg-indigo-600 rounded-full"></span>
             </NavLink>
           </div>
         </div>
@@ -87,7 +86,7 @@ const Navbar = () => {
               Home
             </Link>
           </li> */}
-          <NavLinks />
+          {/* <NavLinks /> */}
           <div className="py-5">{/* <Button /> */}</div>
         </ul>
       </div>
